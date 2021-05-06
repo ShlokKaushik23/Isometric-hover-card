@@ -1,0 +1,111 @@
+:root {
+  --scale: 2;
+}
+
+body{
+  background: #fff;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  transition: 0.5s ease-in;
+}
+
+.container{
+  left: 50%;
+  top: 50%;
+  position: absolute;
+  transform: translate(-50%,-50%) scale(var(--scale));
+}
+
+.card{
+  height: 250px;
+  width: 120px;
+  transform: rotateX(75deg) rotateY(-5deg) rotateZ(23deg);
+	transform-origin: 50% 51% 0px;
+  transform-style: preserve-3d;
+  transition: 0.3s ease-in;
+  display: inline-block;
+  position: static;
+  top: 0px;
+  box-shadow: 15px 15px 30px -5px rgba(56,56,56, 1);
+  overflow: hidden;
+  transform-style: preserve-3d;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+.card:hover{
+  transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(var(--scale));
+  transition: 0.3s ease-in;
+  z-index: 999999;
+  position: absolute;
+  cursor: pointer;
+  height: 100px;
+  width: 60px;
+  overflow: hidden;
+}
+
+#card1:hover{
+  top: -60px;
+}
+
+#card3:hover{
+  top: -260px;
+}
+
+.card img{
+  object-fit: cover;
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.flip{
+  animation: flip 1s linear;
+}
+.flip_back{
+  animation: flip_back 1s linear;
+}
+.cards{
+  position: absolute;
+}
+.cards.c1{
+  top: -200px;
+  right: 20px;
+}
+.cards.c2{
+  top: -120px;
+  right: 130px;
+}
+
+.row.r2{
+  position: absolute;
+  right: -80px;
+  top: 40px;
+
+}
+.row.r3{
+  position: absolute;
+  right: -160px;
+  top: 80px;
+
+}
+
+@keyframes flip{
+  0%{
+    transform: rotateX(0deg) rotateY(180deg) rotateZ(0deg) scale(var(--scale));
+  }
+  100%{
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(var(--scale));
+  }
+}
+@keyframes flip_back{
+  0%{
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(var(--scale));
+  }
+  100%{
+    transform: rotateX(0deg) rotateY(180deg) rotateZ(0deg) scale(var(--scale));
+  }
+}
