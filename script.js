@@ -32,8 +32,6 @@ $(".card")
   });
 
 $(document).ready(function () {
-  // $(".info").delay(5000).fadeOut(300);
-  // $(".show_info").delay(5000).fadeIn(300);
   $(".show_info").on("click", function () {
     $(".info").fadeIn(300);
     $(".show_info").fadeOut(300);
